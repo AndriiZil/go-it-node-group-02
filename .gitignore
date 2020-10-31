@@ -17,9 +17,5 @@
 08/.env
 09/node_modules
 09/.env
-10/node_modules
-10/.env
-11/node_modules
-11/.env
-12/node_modules
-12/.env
+09/socket-example/node_modules
+09/socket-rooms/node_modules

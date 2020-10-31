@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/node_modules/socket.io-client/dist/socket.io.js"></script>
+    <script>
+        let socket = io('/admins');
+
+        socket.on('message', message => {
+            console.log('Message from server', message);
+        });
+
+        socket.on('private message', (message) => {
+            console.log(`Private message from server: "${message}"`)
+        });
+
+        function sendMessage() {
+            socket.emit('message', 'Text Message');
+        }
+    </script>
+    <title>Socket IO</title>
+</head>
+<body>
+    <h2>Hello Socket</h2>
+
+    <button onclick="sendMessage()">
+        Send message to server
+    </button>
+</body>
+</html>
